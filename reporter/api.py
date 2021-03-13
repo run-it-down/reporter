@@ -47,7 +47,7 @@ class Solo:
 
 def create():
     api = falcon.API()
-    api.add_route('solo', Solo())
+    api.add_route('/solo', Solo())
     logger.info('falcon initialized')
     return api
 
