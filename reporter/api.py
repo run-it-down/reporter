@@ -11,7 +11,7 @@ except ModuleNotFoundError:
 
 ANALYZER_ENDPOINT = 'https://analyzer.run-it-down.lol'
 
-logger = common.util.Logger(__name__)
+logger = util.Logger(__name__)
 
 
 class Solo:
