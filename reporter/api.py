@@ -39,9 +39,9 @@ class Solo:
 
         # aggregate metrics to report
         resp.body = json.dumps({
-            'winrate': wr,
-            'kda': kda,
-            'cs': cs
+            'winrate': wr.json(),
+            'kda': kda.json(),
+            'cs': cs.json()
         })
 
 
