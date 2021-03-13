@@ -17,7 +17,7 @@ logger = util.Logger(__name__)
 class Solo:
 
     def on_get(self, req, resp):
-        logger.info(f'solo report for {req.params["summoner"]}')
+        logger.info(f'solo report for {req.params["summonerName"]}')
 
         # get WR
         params = {
