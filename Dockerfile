@@ -6,7 +6,7 @@ RUN apk add python3
 RUN apk add --update py-pip
 RUN pip install --upgrade pip
 
-ADD core /reporter/
+ADD reporter /reporter/
 ADD common /common/
 COPY requirements.txt .
 
