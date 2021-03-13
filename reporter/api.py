@@ -35,7 +35,7 @@ class Solo:
         params = {
             'summoner': req.params['summonerName']
         }
-        kda = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/cs'), params=params)
+        cs = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/cs'), params=params)
 
         # aggregate metrics to report
         resp.body = json.dumps({
