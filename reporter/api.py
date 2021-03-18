@@ -14,10 +14,10 @@ ANALYZER_ENDPOINT = 'https://analyzer.run-it-down.lol'
 logger = util.Logger(__name__)
 
 
-class Solo:
+class Main:
 
     def on_get(self, req, resp):
-        logger.info(f'solo report for {req.params["summonerName"]}')
+        logger.info('reporting')
 
         # get WR
         params = {
@@ -39,15 +39,15 @@ class Solo:
 
         # aggregate metrics to report
         resp.body = json.dumps({
-            'winrate': wr.json(),
-            'kda': kda.json(),
-            'cs': cs.json()
+            'winrate': wr.content,
+            'kda': kda.content,
+            'cs': cs.content,
         })
 
 
 def create():
     api = falcon.API()
-    api.add_route('/solo', Solo())
+    api.add_route('/', Main())
     logger.info('falcon initialized')
     return api
 
