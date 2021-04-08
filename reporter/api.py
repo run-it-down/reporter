@@ -40,6 +40,10 @@ class Main:
         }
         cs = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/cs'), params=params)
 
+        logger.info(wr.content)
+        logger.info(kda.content)
+        logger.info(cs.content)
+
         # aggregate metrics to report
         resp.body = json.dumps({
             'winrate': wr.content,
