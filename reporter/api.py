@@ -21,19 +21,22 @@ class Main:
 
         # get WR
         params = {
-            'summoner': req.params['summonerName']
+            'summoner1': req.params['summoner1'],
+            'summoner2': req.params['summoner2']
         }
         wr = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/winrate'), params=params)
 
         # get KDA
         params = {
-            'summoner': req.params['summonerName']
+            'summoner1': req.params['summoner1'],
+            'summoner2': req.params['summoner2']
         }
         kda = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/kda'), params=params)
 
         # get CS
         params = {
-            'summoner': req.params['summonerName']
+            'summoner1': req.params['summoner1'],
+            'summoner2': req.params['summoner2']
         }
         cs = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/cs'), params=params)
 
