@@ -46,9 +46,9 @@ class Main:
 
         # aggregate metrics to report
         resp.body = json.dumps({
-            'winrate': wr.content,
-            'kda': kda.content,
-            'cs': cs.content,
+            'winrate': json.loads(wr.content),
+            'kda': json.loads(kda.content),
+            'cs': json.loads(cs.content),
         })
 
 
