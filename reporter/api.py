@@ -67,6 +67,22 @@ class Main:
         logger.info('getting common games')
         common_games = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/common-games'), params=params)
 
+        # champ combination
+        # logger.info('getting champ combination')
+        # champ_combo = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/combinations/champions'), params=params)
+
+        # aggression
+        logger.info('getting aggression')
+        aggression = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/aggression'), params=params)
+
+        # avg-role
+        logger.info('getting avg-role')
+        avg_role = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/avg-role'), params=params)
+
+        # gold-diff
+        logger.info('getting gold-diff')
+        gold_diff = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/gold-diff'), params=params)
+
         # aggregate metrics to report
         resp.body = json.dumps({
             'games_analyzed': json.loads(common_games.content.decode())['common_games'],
@@ -80,6 +96,10 @@ class Main:
             'duo_type': json.loads(duo_type.content),
             'farmer_type': json.loads(farmer_type.content),
             'tactician': json.loads(tactician.content),
+            #'champ_combo': json.loads(champ_combo.content),
+            'aggression': json.loads(aggression.content),
+            'avg_role': json.loads(avg_role.content),
+            'gold_diff': json.loads(gold_diff.content),
         })
 
 
