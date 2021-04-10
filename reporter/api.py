@@ -85,7 +85,7 @@ class Main:
 
         # aggregate metrics to report
         resp.body = json.dumps({
-            'games_analyzed': json.loads(common_games.content.decode())['common_games'],
+            'game_information': json.loads(common_games.content),
             'winrate': json.loads(wr.content),
             'kda': json.loads(kda.content),
             'cs': json.loads(cs.content),
