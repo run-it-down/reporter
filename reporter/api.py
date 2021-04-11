@@ -41,7 +41,7 @@ class Main:
 
         # millionaire
         logger.info('getting classification millionaire')
-        millionaire = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/avg-game'), params=params)
+        millionaire = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/classification/millionaire'), params=params)
 
         # match-type
         logger.info('getting classification match-type')
@@ -68,8 +68,8 @@ class Main:
         common_games = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/common-games'), params=params)
 
         # champ combination
-        # logger.info('getting champ combination')
-        # champ_combo = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/combinations/champions'), params=params)
+        logger.info('getting champ combination')
+        champ_combo = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/combinations/champions'), params=params)
 
         # aggression
         logger.info('getting aggression')
@@ -96,7 +96,7 @@ class Main:
             'duo_type': json.loads(duo_type.content),
             'farmer_type': json.loads(farmer_type.content),
             'tactician': json.loads(tactician.content),
-            #'champ_combo': json.loads(champ_combo.content),
+            'champ_combo': json.loads(champ_combo.content),
             'aggression': json.loads(aggression.content),
             'avg_role': json.loads(avg_role.content),
             'gold_diff': json.loads(gold_diff.content),
