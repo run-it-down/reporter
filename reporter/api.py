@@ -23,6 +23,13 @@ class Main:
             'summoner2': req.params['summoner2']
         }
 
+        # common_games
+        logger.info('getting common games')
+        common_games = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/common-games'), params=params)
+
+        if not common_games:
+            resp.status_code = 404
+
         # get WR
         logger.info('getting wr')
         wr = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/winrate'), params=params)
@@ -62,10 +69,6 @@ class Main:
         # tactician
         logger.info('getting classification tactician')
         tactician = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/classification/tactician'), params=params)
-
-        # common_games
-        logger.info('getting common games')
-        common_games = requests.get(url=util.urljoin(ANALYZER_ENDPOINT, '/common-games'), params=params)
 
         # champ combination
         logger.info('getting champ combination')
