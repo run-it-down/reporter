@@ -29,6 +29,7 @@ class Main:
 
         if not common_games:
             resp.status_code = 404
+            return
 
         # get WR
         logger.info('getting wr')
@@ -107,7 +108,7 @@ class Main:
 
 
 def create():
-    api = falcon.API()
+    api = falcon.App(cors_enable=True)
     api.add_route('/', Main())
     logger.info('falcon initialized')
     return api
