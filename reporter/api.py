@@ -85,21 +85,21 @@ class Main:
 
         # aggregate metrics to report
         resp.body = json.dumps({
-            'game_information': json.loads(common_games.content),
-            'winrate': json.loads(wr.content),
-            'kda': json.loads(kda.content),
-            'cs': json.loads(cs.content),
-            'avg-game': json.loads(avg_game.content),
-            'classification_millionaire':  json.loads(millionaire.content),
-            'match_type': json.loads(match_type.content),
-            'murderous_duo': json.loads(murderous_duo.content),
-            'duo_type': json.loads(duo_type.content),
-            'farmer_type': json.loads(farmer_type.content),
-            'tactician': json.loads(tactician.content),
-            'champ_combo': json.loads(champ_combo.content),
-            'aggression': json.loads(aggression.content),
-            'avg_role': json.loads(avg_role.content),
-            'gold_diff': json.loads(gold_diff.content),
+            'game_information': json.loads(common_games.content.decode()),
+            'winrate': json.loads(wr.content.decode()),
+            'kda': json.loads(kda.content.decode()),
+            'cs': json.loads(cs.content.decode()),
+            'avg-game': json.loads(avg_game.content.decode()),
+            'classification_millionaire':  json.loads(millionaire.content.decode()),
+            'match_type': json.loads(match_type.content.decode()),
+            'murderous_duo': json.loads(murderous_duo.content.decode()),
+            'duo_type': json.loads(duo_type.content.decode()),
+            'farmer_type': json.loads(farmer_type.content.decode()),
+            'tactician': json.loads(tactician.content.decode()),
+            'champ_combo': json.loads(champ_combo.content.decode()),
+            'aggression': json.loads(aggression.content.decode()),
+            'avg_role': json.loads(avg_role.content.decode()),
+            'gold_diff': json.loads(gold_diff.content.decode()),
         })
 
 
